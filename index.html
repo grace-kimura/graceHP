@@ -225,6 +225,16 @@
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('year').textContent = new Date().getFullYear();
 
+      // Mobile nav toggle
+      const toggle = document.getElementById('menuToggle');
+      const nav = document.getElementById('nav-links');
+      toggle?.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        toggle.classList.toggle('active');
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+      });
+
       // ===== スライダー初期化（依存なし） =====
       const slider = document.getElementById('slider');
       if (slider) {
