@@ -87,7 +87,18 @@
     .error-message { display:none; background:#7f1d1d; color:#fecaca; padding:1rem; border-radius:8px; margin-top:1rem; text-align:center; }
 
     footer { text-align: center; padding: 2rem 0 3rem; border-top: 1px solid rgba(255,255,255,.1); color: var(--muted); margin-top: 3rem; }
-    @media (max-width: 960px){ .hero{ grid-template-columns:1fr; } .grid-2,.grid-3{ grid-template-columns:1fr; } }
+    
+    /* ===== Mobile tweaks ===== */
+    @media (max-width: 960px){
+      .hero{ grid-template-columns:1fr; gap:1rem; }
+      .btn{ width:100%; text-align:center; }
+    }
+    @media (max-width: 520px){
+      .brand img{ height:48px; }
+      .brand-name{ font-size:1rem; }
+      .section-title{ font-size:1.6rem; }
+      iframe{ height: 820px; }
+    }
   </style>
 </head>
 <body>
