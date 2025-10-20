@@ -6,22 +6,6 @@
   <link rel="icon" href="logo.png" type="image/png">
   <title>GRACE</title>
   <meta name="description" content="GRACEは北海道エリアの配達ドライバーを募集しています。未経験歓迎・AT可・業務委託。働きたい時間をOK、出来高制でしっかり稼げる環境です。" />
-  <meta name="keywords" content="軽貨物, ドライバー求人, 北海道, 業務委託, 配達, GRACE配送, 軽バン, 未経験歓迎, リース車両, 高収入">
-  <meta property="og:title" content="GRACE">
-  <meta property="og:description" content="未経験歓迎・AT可・業務委託！北海道で軽貨物ドライバー募集中。出来高制で高収入を目指せます。">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="GRACE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="GRACE配送｜北海道の軽貨物ドライバー求人">
-  <meta property="og:description" content="未経験歓迎・AT可・出来高制でしっかり稼げる業務委託。北海道でドライバー募集中！">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="GRACE配送">
-
-  <!-- 🔹 Twitterカード設定（X対応） -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GRACE｜北海道の軽貨物ドライバー求人">
-  <meta name="twitter:description" content="北海道エリアで配達ドライバー募集中。未経験歓迎・出来高制・車リースあり！">
-
   <style>
     :root{ --ink:#e5e7eb; --muted:#94a3b8; --brand1:#38bdf8; --brand2:#22d3ee; --bg:#0f172a; }
     *{ box-sizing:border-box; }
@@ -66,28 +50,29 @@
     .btn.alt { background:#475569; }
     .panel { background: rgba(255,255,255,.05); padding: 1rem; border-radius: 14px; border:1px solid rgba(255,255,255,.12); }
 
-    /* スライダー */
+    /* Slider */
     .slider { position: relative; border-radius: 12px; overflow: hidden; }
     .slides { display: flex; transition: transform 0.5s ease-in-out; }
     .slide { min-width: 100%; }
-    .slide img { width: 100%; display: block; }
+    .slide img { width: 100%; display: block; aspect-ratio:16/9; object-fit:cover; }
     .navbtn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: #fff; border: none; border-radius: 50%; padding: .5rem .7rem; cursor: pointer; }
     .navbtn.prev { left: 10px; }
     .navbtn.next { right: 10px; }
 
-    .section-title { font-size: 2rem; margin-top: 3rem; margin-bottom: .6rem; }
-    .section-desc { color: var(--muted); margin-bottom: 1.4rem; }
+    .section-title { font-size: 2rem; margin-top: 2.4rem; margin-bottom: .6rem; }
+    .section-desc { color: var(--muted); margin-bottom: 1.2rem; }
     .grid-2 { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; }
     .grid-3 { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; }
     .list { margin:.2rem 0 0 1rem; }
     .list li{ margin:.2rem 0; }
     .note { color: var(--muted); font-size: .9rem; }
+
     .hiddenHP { position:absolute; left:-9999px; opacity:0; height:0; width:0; }
     .success-message { display:none; background:#065f46; color:#d1fae5; padding:1rem; border-radius:8px; margin-top:1rem; text-align:center; }
     .error-message { display:none; background:#7f1d1d; color:#fecaca; padding:1rem; border-radius:8px; margin-top:1rem; text-align:center; }
 
     footer { text-align: center; padding: 2rem 0 3rem; border-top: 1px solid rgba(255,255,255,.1); color: var(--muted); margin-top: 3rem; }
-    
+
     /* ===== Mobile tweaks ===== */
     @media (max-width: 960px){
       .hero{ grid-template-columns:1fr; gap:1rem; }
@@ -102,10 +87,17 @@
   </style>
 </head>
 <body>
-  <header id="nav-links">
-    <img src="logo.png" alt="GRACEロゴ" height="80">
-    <span style="font-size:2.8rem; font-weight:Precious; color:rgba(122, 122, 122, 0.87);">GRACE</span>
-    <nav>
+  <header>
+    <div class="brand">
+      <img src="logo.png" alt="GRACEロゴ">
+      <span class="brand-name">GRACE 配送</span>
+    </div>
+    <button id="menuToggle" aria-expanded="false" aria-controls="nav-links" aria-label="メニューを開閉">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav id="nav-links">
       <a href="#role">仕事内容</a>
       <a href="#jobs">募集要項</a>
       <a href="#faq">よくある質問</a>
@@ -123,18 +115,14 @@
         <span class="chip">車リース有!</span>
       </div>
       <a href="#jobs" class="btn">募集要項を見る</a>
-      <a href="#contact" class="btn alt" style="margin-left:.5rem;">今すぐ応募する</a>
+      <a href="#contact" class="btn alt" style="margin-top:.45rem;">今すぐ応募する</a>
     </div>
     <div class="panel" aria-label="求人イメージ">
       <div class="slider" id="slider">
         <div class="slides">
-          <div class="slide"><img src="images/shuuri.jpg" alt="軽バン修理"></div>
-          <div class="slide"><img src="images/keiban1.jpg" alt="軽バン車両"></div>
-          <div class="slide"><img src="images/keiban2.jpg" alt="軽バン車両"></div>
-          <div class="slide"><img src="images/keiban3.jpg" alt="軽バン車両"></div>
-          <div class="slide"><img src="images/keiban4.jpg" alt="軽バン車両"></div>
-          <div class="slide"><img src="images/keiban5.jpg" alt="軽バン車両"></div>
-          <div class="slide"><img src="images/keiban6.jpg" alt="軽バン車両"></div>
+          <div class="slide"><img src="images/driver1.jpg" alt="ドライバー1（差し替え可）"></div>
+          <div class="slide"><img src="images/driver2.jpg" alt="ドライバー2（差し替え可）"></div>
+          <div class="slide"><img src="images/driver3.jpg" alt="軽バン車両（差し替え可）"></div>
         </div>
         <button class="navbtn prev" type="button" aria-label="前へ">‹</button>
         <button class="navbtn next" type="button" aria-label="次へ">›</button>
@@ -156,10 +144,9 @@
     <h2 class="section-title">会社概要</h2>
     <p class="section-desc">GRACEは、安全・確実な配送を心掛けています。</p>
     <div class="panel">
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;社名：GRACE（グレイス）</p>
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;代表：木村 義也</p>
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;所在地：北海道北広島市美咲き野3-5-10</p>
-      <p>&nbsp;&nbsp;&nbsp;&nbsp;事業内容：配達ドライバー業務（軽貨物）</p>
+      <p>社名：GRACE（グレイス）</p>
+      <p>所在地：北海道北広島市美咲き野3-5-10</p>
+      <p>事業内容：配達ドライバー業務（軽貨物）</p>
     </div>
   </section>
 
@@ -168,22 +155,22 @@
     <p class="section-desc">一緒に働く仲間を募集しています。</p>
     <div class="grid-2">
       <div class="panel">
-        <h3>&nbsp;&nbsp;募集職種</h3>
+        <h3>募集職種</h3>
         <ul class="list">
           <li>配達ドライバー（業務委託）</li>
         </ul>
-        <h3>&nbsp;&nbsp;応募資格</h3>
+        <h3>応募資格</h3>
         <ul class="list">
           <li>普通自動車免許（AT限定可）</li>
           <li>未経験歓迎・ブランクOK</li>
         </ul>
       </div>
       <div class="panel">
-        <h3>&nbsp;&nbsp;勤務条件</h3>
+        <h3>勤務条件</h3>
         <ul class="list">
           <li>勤務地：札幌市周辺</li>
           <li>勤務日数：週5～6</li>
-          <li>就業時間：6:00～21:00(全配達が終わり次第終了となります!)</li>
+          <li>就業時間：6:00～21:00(配達終了によって変わります!)</li>
           <li>報酬：出来高制（配達件数によります!）</li>
           <li>車両：お持ちの軽バン・リースどちらも可!</li>
         </ul>
@@ -209,13 +196,10 @@
 
   <section id="contact">
     <h2 class="section-title">応募・お問い合わせ</h2>
-    <p class="section-desc">&nbsp;&nbsp;下記フォームからご連絡ください。Googleフォームが自動でメール通知します。</p>
+    <p class="section-desc">下記フォームからご連絡ください。Googleフォームが自動でメール通知します。</p>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTZWw-_R6gZFSspqlioSkPKK6iiKOsGVFywflqsltU-WchDg/viewform?usp=sharing&ouid=112995666100542706729=true"
-            width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">
-      読み込んでいます…
-    </iframe>
+            width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
   </section>
-
 
   <footer>
     <p>© <span id="year"></span> GRACE. All rights reserved.</p>
@@ -235,7 +219,7 @@
         toggle.setAttribute('aria-expanded', String(!expanded));
       });
 
-      // ===== スライダー初期化（依存なし） =====
+      // Slider
       const slider = document.getElementById('slider');
       if (slider) {
         const track = slider.querySelector('.slides');
