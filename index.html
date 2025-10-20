@@ -84,6 +84,12 @@
       .section-title{ font-size:1.6rem; }
       iframe{ height: 820px; }
     }
+    /* スマホ（幅720px以下）のときにパネルを縦並びにする */
+    @media (max-width: 720px) {
+      #role .grid-3 {
+        grid-template-columns: 1fr;
+      }
+   }
   </style>
 </head>
 <body>
